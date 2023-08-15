@@ -4,15 +4,175 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="15dp"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/nameFieldLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/name_field_label"
+        android:labelFor="@id/nameField"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+    />
+
+    <EditText
+        android:id="@+id/nameField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameFieldLabel"
+        android:autofillHints="Digite o nome completo"
+    />
+
+    <TextView
+        android:id="@+id/phoneNumberLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/phone_field_label"
+        android:labelFor="@id/phoneNumberField"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameField"
+    />
+
+    <EditText
+        android:id="@+id/phoneNumberField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phoneNumberLabel"
+        android:autofillHints="Digite o número de telefone"
+        android:hint="@string/phone_number_field_hint"
+    />
+
+    <TextView
+        android:id="@+id/emailFieldLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/email_field_label"
+        android:labelFor="@id/emailField"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phoneNumberField"
+    />
+
+    <EditText
+        android:id="@+id/emailField"
+        android:inputType="textEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailFieldLabel"
+        android:autofillHints="Informe o e-mail"
+    />
+
+    <CheckBox
+        android:id="@+id/emailCheckbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/email_checkbox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailField"
+    />
+
+    <TextView
+        android:id="@+id/genderFieldLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/gender_field_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailCheckbox"
+    />
+
+    <RadioGroup
+        android:id="@+id/genderRadio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/genderFieldLabel"
+        android:orientation="horizontal"
+    >
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gender_radio_male"
+        />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gender_radio_female"
+        />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gender_radio_queer"
+        />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/cityFieldLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/city_field_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/genderRadio"
+        android:labelFor="@id/cityField"
+    />
+
+    <EditText
+        android:id="@+id/cityField"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cityFieldLabel"
+        android:autofillHints="Informe a cidade em que você mora"
+    />
+
+    <TextView
+        android:id="@+id/ufSelectionLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/uf_selection_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cityField"
+        android:labelFor="@id/ufSelection"
+    />
+
+    <Spinner
+        android:id="@+id/ufSelection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ufSelectionLabel"
+        android:entries="@array/uf_options"
+    />
+
+    <Button
+        android:id="@+id/resetButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@id/registryButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/reset_button"
+    />
 
+    <Button
+        android:id="@+id/registryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/resetButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/registry_button"
+    />
 </androidx.constraintlayout.widget.ConstraintLayout>

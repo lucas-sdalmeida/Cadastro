@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Cadastro</string>
+    <string name="name_field_label">Nome completo</string>
+    <string name="phone_field_label">Telefone</string>
+    <string name="phone_number_field_hint">Ex: 12-95124-7892</string>
+    <string name="email_field_label">E-mail</string>
+    <string name="email_checkbox">Ingressar na lista de e-mails?</string>
+    <string name="gender_field_label">Genero</string>
+    <string name="gender_radio_male">Masculino</string>
+    <string name="gender_radio_female">Feminino</string>
+    <string name="gender_radio_queer">Queer</string>
+    <string name="city_field_label">Cidade</string>
+    <string name="uf_selection_label">UF</string>
+    <string name="registry_button">Cadastrar</string>
+    <string name="reset_button">Limpar</string>
+    <string-array name="uf_options" >
+        <item name="uf_ac">Acre</item>
+        <item name="uf_ro">Rondonia</item>
+        <item name="uf_am">Amazonas</item>
+        <item name="uf_sp">Sao Paulo</item>
+        <item name="uf_rj">Rio de Janeiro</item>
+        <item name="uf_mg">Minas Gerais</item>
+        <item name="uf_es">Espirito Santo</item>
+    </string-array>
 </resources>
